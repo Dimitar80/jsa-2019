@@ -32,7 +32,7 @@ var students = [
 // });
 
   
-    // console.log("Najgolem prosek")
+    console.log("Najgolem prosek")
   
     var maxProsek = students.reduce(function(acc, curr) {
       return curr.prosek > acc.prosek ? curr.prosek  : acc;
