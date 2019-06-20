@@ -8,15 +8,21 @@ var fs = require('fs')
 //     }
 // });
 
+   
 
-fs.readFile('test.txt', 'utf8', (err, data)=>{
-    if(err){
-        // console.log(err);
-        console.error(err);
-    }
-    console.log(err);
-    console.log(data);
-});
+
+
+// fs.readFile('test.txt', 'utf8', (err, data)=>{
+//     if(err){
+//         // console.log(err);
+//         console.error(err);
+//     }
+//     console.log(err);
+//     console.log(data);
+// });
+
+
+
 
 
 // Callback f-ii
@@ -56,3 +62,33 @@ fs.readFile('test.txt', 'utf8', (err, data)=>{
 // }
 
 //  var o = pero();
+
+
+
+
+fs.writeFile('homeWork2.txt', 'Hello World!', function (err) { 
+                        if (err)
+        console.log(err);
+                        else
+        console.log('Write operation complete.');
+});
+
+
+fs.writeFile('test.txt', 'Node.js is the best', (err) => {
+    if(err){
+        console.error(err);
+    }
+});
+
+   
+
+
+
+fs.readFile('homeWork2', 'utf8', (err, data)=>{
+    if(err){
+        // console.log(err);
+        console.error(err);
+    }
+    console.log(err);
+    console.log(data);
+});

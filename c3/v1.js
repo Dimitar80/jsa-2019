@@ -8,8 +8,13 @@ var students = [
     {ime:"Maja", prezime:"Desoska", prosek: 7.70},
     {ime:"Ana", prezime:"Veleva", prosek: 8.90},
     {ime:"Marko", prezime:"Terzievski", prosek: 8.65},
-    
-  ]
+    ]
+
+    // var nova = [
+    //   {ime:"Dejan", prezime:"Cvetov", prosek: 8.27},
+    //   {ime:"Boban", prezime:"Acev", prosek: 9.20},
+    //   {ime:"Ana", prezime:"Kocev", prosek: 7.60},
+    //   ]
 
 
   
@@ -33,13 +38,3 @@ var students = [
 
 
   
-
-
-//   function studentsDetails(s) {
-
-//     var sorted = s.sort((a, b) => a.prosek -b.prosek);
-//     console.log("Student so najnizok prosek"sorted);
-
-//   }
-
-//   studentsDetails(students);
