@@ -66,7 +66,7 @@ fs.readFile('file.txt', 'utf8', (err, content)=>{
    //tuka se povikuvaat funk
    seven(content);
    letters(content);
-   sentences(content);
+//    sentences(content);
 });
 
 
@@ -94,17 +94,27 @@ function seven(str) {
           equal.push(strSplit[i]);
        }
     }
-   console.log(`Total: ${strSplit.length}. More than 7 : ${bigg.length}, less than 7: ${less.length}, equal to 7 : ${equal.length} `)
+   console.log(`Total: ${strSplit.length}. More than 7 : ${bigg.length}, less than 7: ${less.length}, 
+   equal to 7 : ${equal.length} `)
   }
  
 
 
 
-  
-  var sentences = (str) => {
-   var sentence = str.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
-   console.log(`There are ${sentence.length} sentences in this text.`)
-};
+
+//   var sentences = (str) => {
+//    var sentence = str.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
+//    console.log(`There are ${sentence.length} sentences in this text.`)
+// };
+
+
+
+
+
+
+
+
+
 
 
 // function w7(str) {
