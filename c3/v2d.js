@@ -122,21 +122,21 @@ Sed a odio vel mi volutpat ultricies eu sed elit. Donec auctor augue eu dapibus 
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat vitae lectus vitae congue. 
    Fusce at felis sit amet risus volutpat iaculis non id nisi. Sed id congue felis.`;
 
-// fs.writeFile('homework2.txt', lipsum, (err) => {
-//     if(err){
-//         console.error(err);
-//     }
-// });
+fs.writeFile('homework2.txt', lipsum, (err) => {
+    if(err){
+        console.error(err);
+    }
+});
 
    
-// fs.readFile('homework2.txt', 'utf8', (err, lipsum)=>{
-//     if(err){
-//         // console.log(err);
-//         console.error(err);
-//     }
-//     console.log(err);
-//     console.log(lipsum);
-// });
+fs.readFile('homework2.txt', 'utf8', (err, data)=>{
+    if(err){
+        // console.log(err);
+        console.error(err);
+    }
+    console.log(err);
+    console.log(data);
+});
 
 
 // console.log("Words 7 letters");
@@ -203,26 +203,26 @@ Sed a odio vel mi volutpat ultricies eu sed elit. Donec auctor augue eu dapibus 
 
  //   console.log(" ");
 
-console.log("Words with more than 7 letters");
+// console.log("Words with more than 7 letters");
 
-function w7(str) {
-    var bigg = [];
-    var strSplit = str.split(' ');
-    // console.log(strSplit);
-     var br = 0;
-    for(var i = 0; i < strSplit.length; i++){
-      if(strSplit[i].length > 7){
-        return br ++;
-           };
-            if(strSplit[i].length < 7){
-              return  br ++; 
-          };
-    };
-      return strSplit;     
-};
+// function w7(str) {
+//     var bigg = [];
+//     var strSplit = str.split(' ');
+//     // console.log(strSplit);
+//      var br = 0;
+//     for(var i = 0; i < strSplit.length; i++){
+//       if(strSplit[i].length > 7){
+//         return br ++;
+//            };
+//             if(strSplit[i].length < 7){
+//               return  br ++; 
+//           };
+//     };
+//       return strSplit;     
+// };
   
- w7(lipsum);
- console.log(w7(lipsum));
+//  w7(lipsum);
+//  console.log(w7(lipsum));
 //  console.log(w7(bigg));
  
 
@@ -236,25 +236,25 @@ function w7(str) {
 
 
 
-// console.log(" ");
+console.log(" ");
 
-// console.log("Letters");
-// var s = lipsum;
-// var rx = /[a-z]/gi;
-// var m = s.match(rx);
-// if (m) {
-//  console.log(m.length);
-// }
+console.log("Letters");
+var s = lipsum;
+var rx = /[a-z]/gi;
+var m = s.match(rx);
+if (m) {
+ console.log(m.length);
+}
 
 
-// console.log(" ");
+console.log(" ");
 
-// console.log("Words");
-// function WordCount(str) { 
-//     return str.split(" ").length;
-//   }
+console.log("Words");
+function WordCount(str) { 
+    return str.split(" ").length;
+  }
   
-//   console.log(WordCount(lipsum));
+  console.log(WordCount(lipsum));
 
 
 

@@ -52,22 +52,23 @@ Sed a odio vel mi volutpat ultricies eu sed elit. Donec auctor augue eu dapibus 
 
 
 
-   fs.writeFile('file.txt', lipsum, (err) => {
-    if(err){
-        console.error(err);
-    }
-});
+//    fs.writeFile('file.txt', lipsum, (err) => {
+//     if(err){
+//         console.error(err);
+//     }
+// });
 
    
-fs.readFile('file.txt', 'utf8', (err, content)=>{
-    if(err){
-        console.error(err);
-    }
-   //tuka se povikuvaat funk
-   seven(content);
-   letters(content);
-//    sentences(content);
-});
+// fs.readFile('file.txt', 'utf8', (err, content)=>{
+//     if(err){
+//         console.error(err);
+//     }
+//    //tuka se povikuvaat funk
+//       seven(content);
+// //    letters(content);
+// //    sentences(content);
+// });
+
 
 
 var letters = (str) => {
@@ -77,26 +78,38 @@ var letters = (str) => {
      console.log("There are " + m.length + " letters in this text.");
    }
 }
+var str = lipsum;
 
-function seven(str) {
-    var strSplit = str.split(' ');
-   var bigg =[];
-   var less =[];
-   var equal = [];
-    for(var i = 0; i < strSplit.length; i++){
-      if(strSplit[i].length > 7){
-         bigg.push(strSplit[i])
-       }
-       else if(strSplit[i].length < 7){
-        less.push(strSplit[i])
-       }
-       else {
-          equal.push(strSplit[i]);
-       }
-    }
-   console.log(`Total: ${strSplit.length}. More than 7 : ${bigg.length}, less than 7: ${less.length}, 
-   equal to 7 : ${equal.length} `)
-  }
+// console.log("Letters");
+// var s = lipsum;
+// var rx = /[a-z]/gi;
+// var m = s.match(rx);
+// if (m) {
+//  console.log(m.length);
+// }
+
+
+
+
+// function seven(str) {
+//     var strSplit = str.split(' ');
+//    var bigg =[];
+//    var less =[];
+//    var equal = [];
+//     for(var i = 0; i < strSplit.length; i++){
+//       if(strSplit[i].length > 7){
+//          bigg.push(strSplit[i])
+//        }
+//        else if(strSplit[i].length < 7){
+//         less.push(strSplit[i])
+//        }
+//        else {
+//           equal.push(strSplit[i]);
+//        }
+//     }
+//    console.log(`Total: ${strSplit.length}. More than 7 : ${bigg.length}, less than 7: ${less.length}, 
+//    equal to 7 : ${equal.length} `);
+//   }
  
 
 
