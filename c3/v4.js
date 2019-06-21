@@ -64,8 +64,8 @@ fs.readFile('file.txt', 'utf8', (err, content)=>{
         console.error(err);
         
     }
-   //tuka se povikuvaat funk
-      wordsall(content);
+   
+      seven(content);
       letters(content);
       sentences(content);
 });
@@ -80,7 +80,8 @@ var letters = (str) => {
    }
 }
 
-function wordsall(str) {
+
+function seven(str) {
     // var strSplit = str.split(' ');
     var strSplit = str.split('.').join("").replace(/,/g,'').split(' ');
    var bigg =[];
@@ -92,18 +93,21 @@ function wordsall(str) {
        }
        else if(strSplit[i].length < 7){
         less.push(strSplit[i]);
-        console.log(strSplit[i].length)
+        console.log(strSplit[i])
        }
        else {
           equal.push(strSplit[i]);
           }
     }
-   console.log(`Total count of words: ${strSplit.length}. More than 7 letters : ${bigg.length}, less than 7 letters: ${less.length}, 
-   equal to 7 letters : ${equal.length} `);
+   console.log(`Total: ${strSplit.length}. More than 7 : ${bigg.length}, less than 7: ${less.length}, 
+   equal to 7 : ${equal.length} `);
   }
  
 
-   var sentences = (str) => {
+
+
+
+  var sentences = (str) => {
    var sentence = str.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
    console.log(`There are ${sentence.length} sentences in this text.`)
 };
@@ -118,25 +122,3 @@ function wordsall(str) {
 
 
 
-// function w7(str) {
-//     var equ = [];
-//     var bigg = [];
-//     var less = [];
-//     var strSplit = str.split(' ');
-//     for(var i = 0; i < strSplit.length; i++){
-//       if(strSplit[i].length > 7){
-//                bigg.push(strSplit[i]);
-//             }
-   
-//         else if(strSplit[i].length < 7){
-//             less.push(strSplit[i]);
-//         }
-//      else{
-//              equ.push(strSplit[i]);
-//             }
-//         }
-//    };
-
-//    w7(lipsum);
-//    console.log(w7(lipsum));
-//    console.log(less);

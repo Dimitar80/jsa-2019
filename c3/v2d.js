@@ -247,13 +247,15 @@ if (m) {
 }
 
 
+
+
 console.log(" ");
 
 console.log("Words");
-function WordCount(str) { 
+function wordCount(str) { 
     return str.split(" ").length;
   }
-  
+  wordCount(lipsum);
   console.log(WordCount(lipsum));
 
 
