@@ -27,8 +27,8 @@ Etiam non varius ligula. Praesent finibus dui elit.
  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti.
   Proin sit amet aliquet dui. Fusce non dui sit amet eros efficitur pulvinar ut at orci.
    Pellentesque vitae consequat elit, eget mattis leo. 
-   Sed gravida urna efficitur, aliquam urna at, porta nisi. Sed eu ipsum libero
-   . Phasellus rutrum nisi risus, eget maximus purus accumsan sit amet. 
+   Sed gravida urna efficitur, aliquam urna at, porta nisi. Sed eu ipsum libero.
+    Phasellus rutrum nisi risus, eget maximus purus accumsan sit amet. 
    Pellentesque diam purus, rhoncus ut mi in, mollis aliquet orci. 
    Quisque a erat non odio sagittis blandit non in ligula. Donec vitae odio elit.
     Suspendisse fringilla dapibus feugiat. Proin in venenatis dui. Nullam sed accumsan ante.
@@ -90,17 +90,19 @@ function seven(str) {
     for(var i = 0; i < strSplit.length; i++){
       if(strSplit[i].length > 7){
          bigg.push(strSplit[i]);
+         console.log(strSplit[i].length)
        }
        else if(strSplit[i].length < 7){
         less.push(strSplit[i]);
-        console.log(strSplit[i])
+        
        }
        else {
           equal.push(strSplit[i]);
           }
     }
-   console.log(`Total: ${strSplit.length}. More than 7 : ${bigg.length}, less than 7: ${less.length}, 
-   equal to 7 : ${equal.length} `);
+   console.log(`Total count of words: ${strSplit.length}. More than 7 letters : ${bigg.length}, 
+   less than 7 letters: ${less.length}, 
+   equal to 7 letters : ${equal.length} `);
   }
  
 
@@ -112,10 +114,7 @@ function seven(str) {
    console.log(`There are ${sentence.length} sentences in this text.`)
 };
 
-
-
-
-
+                   
 
 
 

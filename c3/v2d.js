@@ -134,8 +134,8 @@ fs.readFile('homework2.txt', 'utf8', (err, data)=>{
         // console.log(err);
         console.error(err);
     }
-    console.log(err);
-    console.log(data);
+   //  console.log(err);
+   //  console.log(data);
 });
 
 
@@ -256,7 +256,7 @@ function wordCount(str) {
     return str.split(" ").length;
   }
   wordCount(lipsum);
-  console.log(WordCount(lipsum));
+  console.log(wordCount(lipsum));
 
 
 

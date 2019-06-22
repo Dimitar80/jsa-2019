@@ -106,7 +106,19 @@ function wordsall(str) {
    var sentences = (str) => {
    var sentence = str.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
    console.log(`There are ${sentence.length} sentences in this text.`)
+   console.log(sentence);
 };
+
+
+console.log(" ");
+
+console.log("Words");
+function wordCount(str) { 
+    return str.split(" ").length;
+  }
+  wordCount(lipsum);
+  console.log(wordCount(lipsum));
+ 
 
 
 
