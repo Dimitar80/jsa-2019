@@ -82,8 +82,9 @@ var letters = (str) => {
 
 function wordsall(str) {
     // var strSplit = str.split(' ');
-    var strSplit = str.split('.').join("").replace(/,/g,'').split(' ');
-   var bigg =[];
+    var strSplit = str.split('.').join("").replace(/,/g,'').trim().split(' ');
+    console.log(strSplit);
+   var bigg =[];                                  
    var less =[];
    var equal = [];
     for(var i = 0; i < strSplit.length; i++){
@@ -92,7 +93,7 @@ function wordsall(str) {
        }
        else if(strSplit[i].length < 7){
         less.push(strSplit[i]);
-        console.log(strSplit[i].length)
+        // console.log(strSplit[i].length)
        }
        else {
           equal.push(strSplit[i]);
@@ -106,24 +107,34 @@ function wordsall(str) {
    var sentences = (str) => {
    var sentence = str.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
    console.log(`There are ${sentence.length} sentences in this text.`)
-   console.log(sentence);
+//    console.log(sentence);
 };
 
 
 console.log(" ");
 
-console.log("Words");
+console.log("Words check");
 function wordCount(str) { 
     return str.split(" ").length;
   }
   wordCount(lipsum);
   console.log(wordCount(lipsum));
  
+  var s = " Dimitar; Pavlov, Sega!?."
+  var numWords = s.replace(/^\s+|\s+$/g,"").split(/\s+/);  
+  console.log(numWords);
+
+ 
+//   var f = "Dimitar, Pavlov. LLL!"
+
+//   function WordCount(st) { 
+//     return st.split('.').join("").replace(/,/g,'').split(" ");
+//   }
+  
+//   console.log(WordCount(f));
 
 
-
-
-
+  
 
 
 
@@ -152,3 +163,5 @@ function wordCount(str) {
 //    w7(lipsum);
 //    console.log(w7(lipsum));
 //    console.log(less);
+
+
