@@ -112,7 +112,7 @@ function wordsall(str) {
 
 
 console.log(" ");
-
+// Probi
 console.log("Words check");
 function wordCount(str) { 
     return str.split(" ").length;
@@ -123,6 +123,9 @@ function wordCount(str) {
   var s = " Dimitar; Pavlov, Sega!?."
   var numWords = s.replace(/^\s+|\s+$/g,"").split(/\s+/);  
   console.log(numWords);
+
+
+
 
  
 //   var f = "Dimitar, Pavlov. LLL!"
