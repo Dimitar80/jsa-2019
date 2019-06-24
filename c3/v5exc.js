@@ -130,17 +130,7 @@ var fib = (a,b) => {
    
    fib(0,1);
 
-// var fib = (a,b) => {
-//     if(a > 100) {
-//       return a + b;
-//     }else {
-//     //   console.log(a+b);
-//       return fib(b, a+b);
-     
-//     }
-//    }
-//    fib(0,1);
-//    console.log(fib(0,1));
+
 //    epa b stanuva a, oti e staveno na mestoto na a
 
 // 0+1 = 1, b = 1
@@ -154,21 +144,7 @@ var fib = (a,b) => {
 
 
 
-// var fibonacci_series = function (n) 
-// {
-//   if (n===1) 
-//   {
-//     return [0, 1];
-//   } 
-//   else 
-//   {
-//     var s = fibonacci_series(n - 1);
-//     s.push(s[s.length - 1] + s[s.length - 2]);
-//     return s;
-//   }
-// };
 
-//  console.log(fibonacci_series(9));
 
 
 
