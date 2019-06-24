@@ -124,7 +124,7 @@ var fib = (a,b) => {
        console.log("b= " + b);
       console.log("zbir a + b = " + (a+b));
        
-      return fib(b, a+b);
+       fib(b, a+b);
     }
    }
    
