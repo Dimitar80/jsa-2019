@@ -96,9 +96,11 @@ function wordsall(str) {
        else if(strSplit[i].length < 7){
         less.push(strSplit[i]);
         // console.log(strSplit[i].length)
+        // cita i semicollon i space!!!
        }
        else {
           equal.push(strSplit[i]);
+          console.log(strSplit[i])
           }
     }
    console.log(`Total count of words: ${strSplit.length}. More than 7 letters : ${bigg.length}, less than 7 letters: ${less.length}, 
@@ -109,7 +111,7 @@ function wordsall(str) {
    var sentences = (str) => {
    var sentence = str.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
    console.log(`There are ${sentence.length} sentences in this text.`)
-//    console.log(sentence);
+  //  console.log(sentence);
 };
 
 
