@@ -1,14 +1,48 @@
+
+// Factorials START
 // function factorial(num) {
 //     var result = 1;
 //         for(var i = num; i > 0; i--){
 //             result *= i;
-//             // console.log(result)
+            
+//             console.log(result)
+           
 //     }
 //     return result;
 // }
 
-// factorial(6);
-// console.log(factorial(6));
+// factorial(5);
+// var f = factorial(5)
+// console.log(f+ " Factorial in function")
+
+// Factorial 2
+// function factorial(num) {
+//     var result = 1;
+//         for(var i = 2; i <= num; i++){
+//             result *= i;
+//             console.log(i)
+//             console.log(result)
+            
+//     }
+//     return result;
+// }
+
+// factorial(5);
+// var f = factorial(5)
+// console.log(f+ " Factorial in function")
+
+// function sFact(num){
+//     var rval=1;
+//     for (var i = 1; i <= num; i++){
+//         rval *= i;
+//     } 
+//     return rval;
+// }
+
+// sFact(5)
+// console.log(sFact(5))
+
+// Factorials END
 
 //  function sum(sum){
 //      res = 0;
@@ -99,36 +133,61 @@
 
 
     // isUniform() start
-function isUniform(arr){
-    var first = arr[0];
-    for( var i = 1; i < arr.length; i++){
-        if(arr[i] !== first){
-            return false;
-            }
-        }
-    return true
+// function isUniform(arr){
+//     var first = arr[0];
+//     for( var i = 1; i < arr.length; i++){
+//         if(arr[i] !== first){
+//             return false;
+//             }
+//         }
+//     return true
+// }
+
+// isUniform([1, 1, 1]);
+// console.log(isUniform([1, 1, 1]));
+
+
+
+
+
+// var fib = (a,b) => {
+//     if(a > 200) {
+//       return a + b;
+//     }else {
+//        console.log("a= " + a);
+//        console.log("b= " + b);
+//       console.log("zbir a + b = " + (a+b));
+       
+//        fib(b, a+b);
+//     }
+//    }
+   
+//    fib(0,1);
+
+
+   function evod(l){
+    if(l % 2 === 0){
+     return l + " is even"; 
+    }
+     return l + " is odd"
+    }
+
+evod(6)
+console.log(evod(6))
+var res = evod(5)
+console.log(res)
+
+// even/odd true/false
+
+function isEven(num){
+    return num % 2 === 0;
 }
 
-isUniform([1, 1, 1]);
-console.log(isUniform([1, 1, 1]));
+console.log(isEven(5)+ " " + res)
 
 
 
 
-
-var fib = (a,b) => {
-    if(a > 200) {
-      return a + b;
-    }else {
-   console.log("a= " + a);
-       console.log("b= " + b);
-      console.log("zbir a + b = " + (a+b));
-       
-       fib(b, a+b);
-    }
-   }
-   
-   fib(0,1);
 
 
 //    epa b stanuva a, oti e staveno na mestoto na a
@@ -195,14 +254,7 @@ var fib = (a,b) => {
 // }
 // volcube(6,4,3,)
 
-function volcube(l){
-    // return l + 2;
-    return (l + l)
-}
-volcube(5)
-console.log(volcube(5) + " Ova korista na return")
-var result = volcube(7)
-console.log(result)
+
 
 
 
@@ -251,3 +303,27 @@ console.log(result)
 
 // console.log(typeof 42);
 // console.log(typeof "Dimitar");
+
+
+// console.log(0.1 + 0.2);
+// console.log(0.1 + 0.2 === 0.30000000000000004);
+
+// (function() {
+//     console.log(1); 
+//     setTimeout(function(){console.log(2)}, 1000); 
+//     setTimeout(function(){console.log(3)}, 0); 
+//     console.log(4);
+// })();
+
+
+// function src(){
+//     console.log(1); 
+//     setTimeout(function(){console.log(2)}, 1000); 
+//     setTimeout(function(){console.log(3)}, 0); 
+//     console.log(4);
+// }
+//  console.log(src())
+
+
+
+
