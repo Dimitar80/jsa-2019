@@ -84,7 +84,7 @@ var letters = (str) => {
 
 function wordsall(str) {
     // var strSplit = str.split(' ');
-    var strSplit = str.split('.').join("").replace(/,/g,'').trim().split(' ');
+    var strSplit = str.split('.').join("").replace(/,/g,'').split(' ');
     console.log(strSplit);
    var bigg =[];                                  
    var less =[];
