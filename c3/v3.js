@@ -55,6 +55,8 @@ Sed a odio vel mi volutpat ultricies eu sed elit. Donec auctor augue eu dapibus 
    fs.writeFile('file.txt', lipsum, 'utf8', (err) => {
     if(err){
         console.error(err);
+    }else{
+       console.log('Write operation complete!')
     }
 });
 
