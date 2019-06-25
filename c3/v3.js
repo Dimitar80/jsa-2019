@@ -58,6 +58,7 @@ Sed a odio vel mi volutpat ultricies eu sed elit. Donec auctor augue eu dapibus 
     }else{
        console.log('Write operation complete!')
     }
+    
 });
 
    
@@ -129,7 +130,8 @@ function wordCount(str) {
   console.log(numWords);
 
 
-
+  // var i = 'Hello \n World'
+  // console.log(i)
 
  
 //   var f = "Dimitar, Pavlov. LLL!"
@@ -172,3 +174,12 @@ function wordCount(str) {
 //    console.log(less);
 
 
+var array = [24, 3, 4]
+
+var total = array[0];
+for (var i = 1; i < array.length; i++) {
+    total = total / array[i];
+    
+}
+
+console.log("This is" + total)
