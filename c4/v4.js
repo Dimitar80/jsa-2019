@@ -51,7 +51,7 @@ var server = http.createServer(function(req, res){
              }
                 break;
     }
-    res.write(" " + output + '');
+    res.write(" "+"-" + " Result from " + URL[1] + " is " + output + '');
     res.end();
 });
 
