@@ -11,7 +11,7 @@ api.get('/students/:idf', students.GetStudentByID);
 api.get('/students/:id/grades/:sub', students.GetStudentSubjectGrades);
 
 
-api.get('/calc/:op/:a/:b', calculator.Calculator);
+api.get('/calc/:op/:a/:b', calculator.Calculator)
 
 
 api.listen(8080, (err)=>{
