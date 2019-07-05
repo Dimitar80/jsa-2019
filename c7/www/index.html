@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        table td {
+            text-align: center;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <button id="get-food-btn">Get Food</button>
+    <br>
+    <br>
+
+    <table border = "1" width = "60%" id = "table" >
+		<tr>
+			<th width = "15%">id</th>
+			<th width = "40%">name</th>
+			<th width = "15%">price</th>
+			<th width = "30%">calories</th>
+		</tr>
+
+    </table>
+    
+    <script>
+        var getFoodBtn = document.querySelector('#get-food-btn');
+        getFoodBtn.addEventListener('click', (e) => {
+            fetch('http://127.0.0.1:8080/food')
+            .then(res => res.json())
+            .then(data => {
+                for(var i = 0; i < data.length; i++){
+        var tr = document.createElement("tr");
+        console.log(data[i]);
+        for(var key in data[i]){
+        var obj = data[i];
+        var td = document.createElement("td");
+        td.innerText = obj[key]
+       // console.log(obj[key]);
+        tr.append(td);
+    }
+        table.append(tr);
+          }
+          console.log(data);
+        })
+    })
+
+
+            
+    </script>
+</body>
+</html>
+

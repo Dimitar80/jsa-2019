@@ -85,45 +85,82 @@ var UpdateFood = (req, res) => {
 }
 
 
+// var PartialUpdateFood = (req, res) => {
+//     var check = req.body.id != undefined
+//     && req.body.name != undefined && req.body.name != "" && req.body.name.length > 0
+//     && req.body.price != undefined
+//     && req.body.calories != undefined;
+//     // console.log(check);
+// if(!check){
+//     return res.status(400).send('Bad request');
+// }
+// fs.readFile('./food_list.json', 'utf8', (err, data) => {
+//     if(err){
+//         return res.send('Could not read file');
+//     }
+//     var jData = JSON.parse(data);
+//     // console.log(jData)
+    
+//     for(let i = 0; i < jData.length; i++){
+//         if(jData[i].id == req.params.id){
+//             // jData[i] = req.body;
+//             break;
+//         }
+//         keys = Object.keys(jData[i]);
+//         // console.log(keys);
+//         for(let j = 0; j < keys.length; j++){
+//             ind = keys.indexOf(keys[j]);
+//         if(keys[j].ind == req.params.ind){
+//             keys[j] = req.body;
+//             break;
+//         }
+//      }
+//     }
+//     fs.writeFile('./food_list.json', JSON.stringify(jData), (err) => {
+//         if(err){
+//             return res.status(500).send('Could not save file');
+//         }
+//         return res.status(200).send('Yess');
+//     });
+// });
+
+// }
+
 var PartialUpdateFood = (req, res) => {
     var check = req.body.id != undefined
-    && req.body.name != undefined && req.body.name != "" && req.body.name.length > 0
-    && req.body.price != undefined
-    && req.body.calories != undefined;
-    // console.log(check);
-if(!check){
-    return res.status(400).send('Bad request');
-}
-fs.readFile('./food_list.json', 'utf8', (err, data) => {
-    if(err){
-        return res.send('Could not read file');
+                || req.body.name != undefined || req.body.name != "" || req.body.name.length > 0
+                || req.body.price != undefined
+                || req.body.calories != undefined;
+ 
+    if (!check) {
+        return res.status(400).send('Bad request');
     }
-    var jData = JSON.parse(data);
-    // console.log(jData)
-    
-    for(let i = 0; i < jData.length; i++){
-        if(jData[i].id == req.params.id){
-            jData[i] = req.body;
-            break;
+    fs.readFile('./food_list.json', 'utf8', (err, data) => {
+        if (err) {
+            res.send('Could not read file');
+            return;
         }
-        keys = Object.keys(jData[i]);
-        // console.log(keys);
-        for(let j = 0; j < keys.length; j++){
-        if(keys[i] == req.params.id.ki){
-            keys = req.body;
-            break;
+        var jData = JSON.parse(data);
+        var body = req.body;
+        var foodKeys = Object.keys(body);
+        for (let i = 0; i < jData.length; i++) {
+            if (jData[i].id == req.params.id) {
+                for (let j = 0; j < foodKeys.length; j++) {
+                    jData[i][foodKeys[j]] = body[foodKeys[j]];
+                    console.log(body[foodKeys[j]]);
+                }
+                break;
+ 
+            }
         }
-     }
-    }
-    fs.writeFile('./food_list.json', JSON.stringify(jData), (err) => {
-        if(err){
-            return res.status(500).send('Could not save file');
-        }
-        return res.status(200).send('Yess');
+        fs.writeFile('./food_list.json', JSON.stringify(jData), (err) => {
+            if (err) {
+                return res.status(500).send('Could not save file');
+            }
+            return res.status(200).send('Success!');
+        });
     });
-});
-
-}
+ }
 
 
 
@@ -161,3 +198,5 @@ module.exports = {
     PartialUpdateFood,
     DeleteFood,
 };
+
+
