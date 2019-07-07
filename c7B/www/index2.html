@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,17 +12,50 @@
             font-size: 25px;
             font-weight: bold;
         }
-        /* button {
-               text-align: center;
-        } */
+        .u{
+            display: flex;
+        }
+
+        form {
+             display: flex;
+             flex-direction: row;
+             
+        }
+
+label, input {
+             display: block;
+        }
+       
     </style>
 </head>
 <body>
     <h1>Hello World!</h1>
-    <button id="get-food-btn">Get Food</button>
-    <button id="put-food-btn">Put Food</button>
+    <div class="u" >
+    <button id="get-food-btn" >Get Food</button>
+    <br>
+    <span> &nbsp; &nbsp;  </span>
+    <form id="newFood" >
+            <label for="id">id</label>
+            <span> &nbsp;  </span>
+            <input type="number" id="id" placeholder="number">
+            <span> &nbsp;  </span>
+            <label for="name">name</label>
+            <span> &nbsp;  </span>
+            <input type="text" id="name" placeholder="food">
+            <span> &nbsp;  </span>
+            <label for="price">price</label>
+            <span> &nbsp;  </span>
+            <input type="number" id="price" placeholder="number">
+            <span> &nbsp;  </span>
+            <label for="calories">calories</label>
+            <span> &nbsp;  </span>
+            <input type="number" id="calories" placeholder="number">
+            <span> &nbsp;  </span>
+            <button type="submit" id="post-food-btn">Post Food</button>
+    </form>
+     </div>
     <br><br>
-    <table border="1" width="50%">
+    <table border = "1" width="50%">
         <thead>
             <tr>
                 <th>id</th>
@@ -37,6 +70,52 @@
         </tbody>
     </table>
     <script>
+           
+
+
+        var dataForm = document.querySelector('#newFood');
+        // var postFoodBtn = document.querySelector('#post-food-btn');
+        dataForm.addEventListener('submit', function (e){
+            e.preventDefault();
+            // var formData = new formData(dataForm)
+            var newFood = {
+                id: null,
+                name: "",
+                price: null,
+                calories: null
+            }
+
+            var inputId = document.getElementById('id').value;
+            var inputName = document.getElementById('name').value;
+            var inputPrice = document.getElementById('price').value;
+            var inputCalories = document.getElementById('calories').value;
+
+            newFood.id = Number(inputId);
+            newFood.name = inputName;
+            newFood.price = Number(inputPrice);
+            newFood.calories = Number(inputCalories);
+            console.log(newFood);
+
+            fetch('http://127.0.0.1:8080/food', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newFood)
+            }).then(function(response){
+                return response.data
+            }).then(function(newFood){
+                console.log(newFood);
+            }).catch(function(error){
+                console.error(error);
+
+            })
+        });
+            
+               
+                
+
         var dataContainer = document.querySelector('.data');
         var getFoodBtn = document.querySelector('#get-food-btn');
         getFoodBtn.addEventListener('click', (e) => {
@@ -76,6 +155,7 @@
                             console.log('deleted');
                         });
                     });
+                    // POST
                     td5.append(delBtn);
                     tr.append(td5);
                     dataContainer.appendChild(tr);
@@ -84,4 +164,4 @@
         });
     </script>
 </body>
-</html> -->
+</html>

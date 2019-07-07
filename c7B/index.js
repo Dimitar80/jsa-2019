@@ -1,4 +1,5 @@
 var express = require('express');
+var cors = require('cors')
 var bodyParser = require('body-parser');
 var students = require('./handlers/students');
 var calculator = require('./handlers/calculator');
@@ -7,10 +8,20 @@ var food = require('./handlers/food');
 var api = express();
 api.use(bodyParser.json());
 api.use(express.static('www'));
-api.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    next();
- });
+// api.use(function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     next();
+//  });
+api.use(require('cors')());
+// api.use(function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+//     next();
+//   });
+
+
+
 
 api.get('/students', students.GetAllStudents);
 api.get('/students/:id', students.GetStudentByID);

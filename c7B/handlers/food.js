@@ -29,7 +29,7 @@ var GetSingleFood = (req, res) => {
 }
 
 var CreateNewFood = (req, res) => {
-    var check = req.body.id != undefined
+    var check = req.body.id != undefined //&& req.body.id ==
         && req.body.name != undefined && req.body.name != "" && req.body.name.length > 0
         && req.body.price != undefined
         && req.body.calories != undefined;
