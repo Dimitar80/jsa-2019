@@ -70,52 +70,8 @@ label, input {
         </tbody>
     </table>
     <script>
-           
 
-
-        var dataForm = document.querySelector('#newFood');
-        // var postFoodBtn = document.querySelector('#post-food-btn');
-        dataForm.addEventListener('submit', function (e){
-            e.preventDefault();
-            // var formData = new formData(dataForm)
-            var newFood = {
-                id: null,
-                name: "",
-                price: null,
-                calories: null
-            }
-
-            var inputId = document.getElementById('id').value;
-            var inputName = document.getElementById('name').value;
-            var inputPrice = document.getElementById('price').value;
-            var inputCalories = document.getElementById('calories').value;
-
-            newFood.id = Number(inputId);
-            newFood.name = inputName;
-            newFood.price = Number(inputPrice);
-            newFood.calories = Number(inputCalories);
-            console.log(newFood);
-
-            fetch('http://127.0.0.1:8080/food', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newFood)
-            }).then(function(response){
-                return response.data
-            }).then(function(newFood){
-                console.log(newFood);
-            }).catch(function(error){
-                console.error(error);
-
-            })
-        });
-            
-               
-                
-
+        //Get Food
         var dataContainer = document.querySelector('.data');
         var getFoodBtn = document.querySelector('#get-food-btn');
         getFoodBtn.addEventListener('click', (e) => {
@@ -129,7 +85,7 @@ label, input {
                     td1.innerText = data[i].id;
                     tr.append(td1);
                     var td2 = document.createElement('td');
-                    td2.innerText = data[i].name;
+                    td2.innerText = data[i].name.toLowerCase();
                     tr.append(td2);
                     var td3 = document.createElement('td');
                     td3.innerText = data[i].price;
@@ -144,6 +100,7 @@ label, input {
                     delBtn.style.verticalAlign = 'middle';
                     delBtn.addEventListener('click', function(e) {
                         var parent = this.parentNode.parentNode
+                        
                         // alert(`Delete ${data[i].id}`);
                         fetch(
                             `http://127.0.0.1:8080/food/${data[i].id}`,
@@ -155,13 +112,84 @@ label, input {
                             console.log('deleted');
                         });
                     });
-                    // POST
                     td5.append(delBtn);
                     tr.append(td5);
                     dataContainer.appendChild(tr);
                 }
             });
         });
+           
+
+       //Post Food
+        var dataForm = document.querySelector('#newFood');
+        // var postFoodBtn = document.querySelector('#post-food-btn');
+        dataForm.addEventListener('submit', function (e){
+            e.preventDefault();
+            // var row = this.rowNode
+            // var formData = new formData(dataForm)
+            var newFood = {
+                id: null,
+                name: "",
+                price: null,
+                calories: null
+            }
+
+            var inputId = document.getElementById('id').value;
+            var inputName = document.getElementById('name').value.toLowerCase();
+            var inputPrice = document.getElementById('price').value;
+            var inputCalories = document.getElementById('calories').value;
+
+            newFood.id = Number(inputId);
+            newFood.name = inputName;
+            newFood.price = Number(inputPrice);
+            newFood.calories = Number(inputCalories);
+            console.log(newFood);
+            
+
+            
+        // Ovde da dodava nov red  vo tabelata HTML na Post Food
+            for (var p = 0; p < newFood.length; p++) {
+                console.log(newFood.length);
+            var ntr = document.createElement('tr');        
+            // var ntr = dataContainer.insertRow('tr');        
+            var ntd1 = document.createElement('td');        
+            ntd1.innerText = newFood[p].newFood.id;
+            ntr.append(ntd1)
+            // dataContainer.insertRow(ntr);
+            dataContainer.appendChild(ntr);
+             
+            }
+        
+
+            fetch('http://127.0.0.1:8080/food', {
+                method: 'post',
+                body: JSON.stringify(newFood),
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                
+            }).then(function(response){
+                return response.text();
+            }).then(function(data){
+                // row.insert();
+                console.log(data);
+            }).catch(function(error){
+                console.error(error);
+
+            })
+           
+        });
+        // function refresh() {
+        //           window.location.reload();
+
+        //   }
+
+     
+            
+               
+                
+        
     </script>
 </body>
 </html>
