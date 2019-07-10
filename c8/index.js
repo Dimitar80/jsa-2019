@@ -16,6 +16,8 @@ api.engine('hbs', hbs.express4({
 api.set('view engine', 'hbs');
 api.set('views', __dirname + '/views');
 
+// Ok prifakjam 
+
 api.get('/students', students.GetAllStudents);
 api.get('/students/:id', students.GetStudentByID);
 api.get('/students/:id/grades/:sub', students.GetStudentSubjectGrades);
