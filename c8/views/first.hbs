@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello {{ime}} {{prezime}}!</h1>
+    <ul>
+        {{#each studenti}}
+        <li>{{ime}} {{prezime}}</li>
+        {{/each}}
+    </ul>
+    <hr>
+    <br>
+
+
+       {{!-- <table border="1" width="50%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>price</th>
+                <th>calories</th>
+            </tr>
+             {{#each foods}}
+           <tr> <td>{{id}}</td> <td>{{name}}</td> <td>{{price}}</td> <td>{{calories}}</td></tr>
+            {{/each}}
+        </thead>
+        <tbody class="data">
+
+        </tbody>
+    </table> --}}
+
+    <table border="1" width="50%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>price</th>
+                <th>calories</th>
+            </tr>
+             
+        </thead>
+        <tbody >
+         {{#each prop}}
+           <tr> <td>{{id}}</td> <td>{{name}}</td> <td>{{price}}</td> <td>{{calories}}</td></tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</body>
+</html>
