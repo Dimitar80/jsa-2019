@@ -44,13 +44,13 @@ var Second = (req, res) => {
             res.send('Could not read file');
             return;
         }
-        else {
+        
             jData = JSON.parse(data);
             var obj = {};
             obj.prop = jData;
             //console.log(jData)
             res.render('first', obj)
-            }
+            
         });
     }
         

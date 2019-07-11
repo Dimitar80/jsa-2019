@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var hbs = require('express-hbs');
+// var joi = require('joi');
 
 var students = require('./handlers/students');
 var calculator = require('./handlers/calculator');
@@ -8,7 +9,9 @@ var food = require('./handlers/food');
 var templates = require('./handlers/templates');
 
 var api = express();
+// var api = joi();
 api.use(bodyParser.json());
+// api.use('joi')
 api.use(express.static('www'));
 api.engine('hbs', hbs.express4({
     partialsDir: __dirname + '/views/partials'
@@ -16,7 +19,7 @@ api.engine('hbs', hbs.express4({
 api.set('view engine', 'hbs');
 api.set('views', __dirname + '/views');
 
-// Ok prifakjam 
+
 
 api.get('/students', students.GetAllStudents);
 api.get('/students/:id', students.GetStudentByID);
